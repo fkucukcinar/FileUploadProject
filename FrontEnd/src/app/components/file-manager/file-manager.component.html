@@ -1,0 +1,24 @@
+<app-upload [disabled]="showProgress" (uploadStatus)="uploadStatus($event)"></app-upload>
+<h2>File List</h2>
+<p *ngIf="showProgress"> progress <strong>{{percentage}}%</strong></p>
+<label class="error" [hidden]="!showDownloadError">There were errors while downloading</label>
+<label class="error" [hidden]="!showUploadTypeError">File type is not valid...!</label>
+<label class="error" [hidden]="!showUploadSizeError">File size exceeds the limits...!</label>
+<label class="error" [hidden]="!showUploadError">There were errors during the upload</label>
+<hr>
+<div class="container">
+  <ul>
+    <li>
+      <label for="">File Name</label>
+      <label for="">File Size</label>
+      <label for="">File Date</label>
+    </li>
+    <li *ngFor="let file of files">
+      <a>
+        {{file.name}} - {{file.size}} - {{file.date}}
+        <app-download [disabled]="showProgress" [fileName]="file" (downloadStatus)="downloadStatus($event)"></app-download>
+      </a>
+    </li>
+  </ul>
+</div>
+

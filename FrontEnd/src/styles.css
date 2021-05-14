@@ -1,0 +1,71 @@
+.button {
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 30px;
+}
+
+.upload {
+  background-color: #4CAF50;
+  float: right;
+  height: 40px;
+  width: 200px;
+  margin: 10px;
+}
+
+.download {
+  background-color: rgb(184, 12, 12);
+  width: 100px;
+  height: 30px;
+}
+
+.button.disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.container {
+  display: flex;
+}
+
+.container-upload {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 20px;
+  width: 100%;
+}
+
+li {
+  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+  border-bottom: 1px solid #ccc;
+}
+
+li:last-child {
+  border: none;
+}
+
+li a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+}
+
+li a:hover {
+  background: #f6f6f6;
+}
+
+label.error {
+  font-size: 20pt;
+  color: red;
+  text-transform: uppercase;
+}
