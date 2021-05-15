@@ -18,7 +18,7 @@ export class UploadComponent {
   }
 
   public upload(event) {
-    debugger;
+
     if (event.target.files && event.target.files.length > 0) {
       for (let index = 0; index < event.target.files.length; index++) {
         //let file = event.target.files[index];

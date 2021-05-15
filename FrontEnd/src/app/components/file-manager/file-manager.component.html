@@ -6,19 +6,27 @@
 <label class="error" [hidden]="!showUploadSizeError">File size exceeds the limits...!</label>
 <label class="error" [hidden]="!showUploadError">There were errors during the upload</label>
 <hr>
-<div class="container">
-  <ul>
-    <li>
-      <label for="">File Name</label>
-      <label for="">File Size</label>
-      <label for="">File Date</label>
-    </li>
-    <li *ngFor="let file of files">
-      <a>
-        {{file.name}} - {{file.size}} - {{file.date}}
-        <app-download [disabled]="showProgress" [fileName]="file" (downloadStatus)="downloadStatus($event)"></app-download>
-      </a>
-    </li>
-  </ul>
+
+<div>
+
+  <table>
+     <thead>
+        <tr>
+           <th>File Name</th>
+           <th>File Size</th>
+           <th>File Upload Date</th>
+           <th>Download</th>
+        </tr>
+     </thead>
+     <tbody>
+        <tr *ngFor="let file of files">
+           <td>{{ file.name }}</td>
+           <td>{{ file.size }} KB </td>
+           <td>{{ file.date}}</td>
+           <app-download [disabled]="showProgress" [fileName]="file" (downloadStatus)="downloadStatus($event)"></app-download>
+
+        </tr>
+     </tbody>
+  </table>
 </div>
 

@@ -90,10 +90,10 @@ namespace BackEnd.Controllers
                 {
                     var model = new FileModel();
                     var fileInfo = provider.GetFileInfo(fileName);
-                    long length = new System.IO.FileInfo(fileInfo.Name).Length;
-                    model.Name = fileInfo.Name;
+                    long length = new System.IO.FileInfo(fileInfo.Name).Length / 1000;
+                    model.Name =  new System.IO.FileInfo(fileInfo.Name).Name;
                     model.Size = length.ToString();
-                    model.Date = fileInfo.LastModified.ToString();
+                    model.Date = new System.IO.FileInfo(fileInfo.Name).LastWriteTime.ToString();
                     result.Add(model);
                 }
             }
